@@ -1,13 +1,14 @@
 version: '3'
 services:
   web:
-    command: odoo -d rd-demo -u estate,estate_account --dev xml
+    # command: odoo -d rd-demo --without-demo=all --load-language=en_GB -i base,web
+    command: odoo -d rd-demo --without-demo=all -u estate,estate_account --dev xml
     image: odoo:14.0
     platform: linux/amd64
     depends_on:
       - db
     ports:
-      - "8069:8069"
+      - "8000:8069"
     volumes:
       - ./custom:/mnt/extra-addons
     environment:
@@ -22,3 +23,5 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
+    volumes:
+      - ./data/odoo-db-data:/var/lib/postgresql/data
