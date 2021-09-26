@@ -1,9 +1,11 @@
 version: '3'
 services:
   web:
-    # 7ajf-bfnx-75a9 mortimerwebsite pkze-sr6v-rbbv
-    # command: odoo -d base-demo --without-demo=all --load-language=en_GB -i base,web
-    image: odoo:14.0
+    build:
+      context: .
+    # 7ajf-bfnx-75a9 mortimerwebsite pkze-sr6v-rbbv UA-206803509-1
+    # command: odoo --db_port=5432
+    image: odoo-gcpcloudrun:14.0
     # platform: linux/amd64
     depends_on:
       - db
