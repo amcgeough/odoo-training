@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: .
-    # 7ajf-bfnx-75a9 mortimerwebsite pkze-sr6v-rbbv UA-206803509-1
+    # z558-8rqs-w5sz mortimerwebsite UA-206803509-1
     # command: odoo --db_port=5432
     image: odoo-gcpcloudrun:14.0
     # platform: linux/amd64
@@ -12,8 +12,8 @@ services:
     ports:
       - "8001:8069"
     # volumes:
-    #   - ./config:/etc/odoo
-    #   - ./custom:/mnt/extra-addons
+    #   - ./apps:/mnt/extra-addons
+      # - ./config:/etc/odoo
     environment:
       - HOST=db
       - USER=odoo
