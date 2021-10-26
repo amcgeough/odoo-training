@@ -9,9 +9,9 @@ services:
       - db
     ports:
       - "8001:8069"
-    # volumes:
-    #   - ./config:/etc/odoo
-    #   - ./custom:/mnt/extra-addons
+    volumes:
+      - ./config:/etc/odoo
+      - ../addons:/mnt/extra-addons
     environment:
       - HOST=db
       - USER=odoo

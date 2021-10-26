@@ -1,1 +1,5 @@
 /data
+*.pyc
+addons/enterprise-13.0
+addons/enterprise-14.0
+*.DS_Store
